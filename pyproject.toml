@@ -1,0 +1,27 @@
+[tool.poetry]
+name = "mitre-attack-navigator-layer-builder"
+version = "0.1.0"
+description = ""
+authors = ["Tyler Fisher <tylerfisher@tylerfisher.ca>"]
+readme = "README.md"
+packages = [{include = "mitre_attack_navigator_layer_builder"}]
+
+[tool.poetry.scripts]
+mitre-attack-navigator-layer-builder = "mitre_attack_navigator_layer_builder.cli:main"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+pydantic = "^2.0.2"
+click = "^8.1.4"
+webcolors = "^1.13"
+nearest-colour = "^1.0.0"
+taxii2-client = "^2.3.0"
+stix2 = "^3.0.1"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^7.4.0"
+coverage = "^7.2.7"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
