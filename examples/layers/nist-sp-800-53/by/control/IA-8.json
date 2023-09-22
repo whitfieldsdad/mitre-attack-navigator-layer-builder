@@ -1,0 +1,5292 @@
+{
+    "name": "IA-8: Identification And Authentication (Non-Organizational Users)",
+    "domain": "enterprise-attack",
+    "description": "MITRE ATT&CK techniques related to IA-8: Identification And Authentication (Non-Organizational Users)",
+    "sorting": 0,
+    "layout": {
+        "layout": "side",
+        "showID": true,
+        "showName": true,
+        "showAggregateScores": false,
+        "countUnscored": false,
+        "aggregateFunction": "average"
+    },
+    "hideDisabled": true,
+    "techniques": [
+        {
+            "techniqueID": "T1053",
+            "enabled": true,
+            "metadata": [],
+            "color": "#3182bd",
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1053.007",
+            "enabled": true,
+            "metadata": [],
+            "color": "#3182bd",
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1059",
+            "enabled": true,
+            "metadata": [],
+            "color": "#3182bd",
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1059.001",
+            "enabled": true,
+            "metadata": [],
+            "color": "#3182bd",
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1059.008",
+            "enabled": true,
+            "metadata": [],
+            "color": "#3182bd",
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1087.004",
+            "enabled": true,
+            "metadata": [],
+            "color": "#3182bd",
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1190",
+            "enabled": true,
+            "metadata": [],
+            "color": "#3182bd",
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1210",
+            "enabled": true,
+            "metadata": [],
+            "color": "#3182bd",
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1213",
+            "enabled": true,
+            "metadata": [],
+            "color": "#3182bd",
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1213.001",
+            "enabled": true,
+            "metadata": [],
+            "color": "#3182bd",
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1213.002",
+            "enabled": true,
+            "metadata": [],
+            "color": "#3182bd",
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1528",
+            "enabled": true,
+            "metadata": [],
+            "color": "#3182bd",
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1530",
+            "enabled": true,
+            "metadata": [],
+            "color": "#3182bd",
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1537",
+            "enabled": true,
+            "metadata": [],
+            "color": "#3182bd",
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1538",
+            "enabled": true,
+            "metadata": [],
+            "color": "#3182bd",
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1542",
+            "enabled": true,
+            "metadata": [],
+            "color": "#3182bd",
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1542.001",
+            "enabled": true,
+            "metadata": [],
+            "color": "#3182bd",
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1542.003",
+            "enabled": true,
+            "metadata": [],
+            "color": "#3182bd",
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1542.005",
+            "enabled": true,
+            "metadata": [],
+            "color": "#3182bd",
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": true,
+            "metadata": [],
+            "color": "#3182bd",
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        },
+        {
+            "techniqueID": "T1547.006",
+            "enabled": false,
+            "metadata": [],
+            "links": [],
+            "showSubtechniques": true
+        }
+    ],
+    "showTacticRowBackground": false,
+    "tacticRowBackground": "# dddddd",
+    "selectTechniquesAcrossTactics": true,
+    "selectSubtechniquesWithParent": true,
+    "metadata": []
+}
