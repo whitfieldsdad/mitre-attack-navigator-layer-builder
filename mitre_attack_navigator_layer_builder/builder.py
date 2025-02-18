@@ -74,7 +74,7 @@ class GradientColorScheme(ColorScheme):
     
     def get_color_map(self, min_value: int, max_value: int) -> Dict[int, str]:
         m = {}
-        colors = self.get_colors(max_value)
+        colors = self.get_colors(min_value=min_value, max_value=max_value)
         for i, color in enumerate(colors, start=min_value):
             m[i] = color
         return m
@@ -397,13 +397,13 @@ def serialize_layer_to_json(layer: Layer, indent: int = JSON_INDENT) -> str:
 
 
 # TODO: merge layers as a heatmap
-def merge_layers(layers: Iterable[Layer], layer_config: Optional[LayerConfig] = None, merge_strategy: str = UNION) -> Layer:
+def merge_layers(layers: Iterable[Layer], merge_strategy: str = UNION) -> Layer:
     layers = list(layers)
     domains = {layer.domain for layer in layers}
     assert len(domains) == 1, f'Cannot merge layers from different domains: {domains}'
     
     if merge_strategy == HEATMAP:
-        layer = _merge_layers_as_heatmap(layers)        
+        layer = merge_layers_as_heatmap(layers)        
     else:
         raise ValueError(f'Invalid merge strategy: {merge_strategy}')
     
@@ -411,7 +411,7 @@ def merge_layers(layers: Iterable[Layer], layer_config: Optional[LayerConfig] = 
 
 
 # TODO: make color scheme configurable
-def _merge_layers_as_heatmap(layers: List[Layer]) -> Layer:
+def merge_layers_as_heatmap(layers: List[Layer]) -> Layer:
     scores = collections.defaultdict(int)
     
     for layer in layers:
@@ -427,8 +427,6 @@ def _merge_layers_as_heatmap(layers: List[Layer]) -> Layer:
     gradient = GradientColorScheme(
         min_color='cornflowerblue',
         max_color='darkblue',
-        min_value=min_score,
-        max_value=max_score,
     )
     color_map = gradient.get_color_map(min_value=min_score, max_value=max_score)
     
@@ -443,7 +441,11 @@ def _merge_layers_as_heatmap(layers: List[Layer]) -> Layer:
         techniques.append(technique)
 
     return Layer(
-        gradient=gradient,
+        gradient=Gradient(
+            minValue=min_score,
+            maxValue=max_score,
+            colors=list(color_map.values()),
+        ),
         techniques=techniques,
     )
 

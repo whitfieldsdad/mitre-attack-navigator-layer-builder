@@ -25,6 +25,8 @@ def generate_layer():
 
 
 @main.command()
+@click.option('--input-layers', '-i', type=str, multiple=True, help="Paths to input layers")
+@click.option('--output-path', '-o', type=str, help="Path to output workbook")
 def generate_xlsx_workbook(input_layers: List[str], output_path: str):
     raise NotImplementedError()
 
