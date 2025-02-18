@@ -14,11 +14,12 @@ python = "^3.10"
 pydantic = "^2.0.2"
 click = "^8.1.4"
 webcolors = "^1.13"
-nearest-colour = "^1.0.0"
 taxii2-client = "^2.3.0"
 stix2 = "^3.0.1"
 polars = "^1.21.0"
 dacite = "^1.9.2"
+nearest-colour = "^1.0.0"
+pandas = "^1.3.5"
 
 [build-system]
 requires = ["poetry-core"]

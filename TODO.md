@@ -1,5 +1,19 @@
 # TODO
 
+- [ ] Write command line interface for generating layers
+- [ ] Write command line interface for merging layers
+  - [ ] Heatmaps
+  - [ ] Unions
+  - [ ] Left diff
+  - [ ] Right diff
+  - [ ] Symmetric diff
+  - [ ] Intersection
+- [ ] Write command line interface for editing layers
+- [ ] Write command line interface for converting layers between formats
+- [ ] Write command line interface for validating layers
+- [ ] Write command line interface for bundling layers into an XLSX workbook
+- [ ] Determine if parent techniques should be enabled or disabled when subtechniques are selected
+- When merging layers, consider mappings involving tactics and techniques.
 - Visualize TTPs by:
   - [ ] Data source (i.e., for MITRE ATT&CK Enterprise)
   - [ ] Data component (i.e., for MITRE ATT&CK Enterprise)
@@ -11,3 +25,5 @@
   - [ ] MITRE CAPEC technique
   - [ ] MITRE CWE weakness
   - [ ] MITRE CVE (i.e., CVE -> CWE -> CAPEC -> ATT&CK)
+  - [ ] MITRE MBC
+  - [ ] Cypher queries

@@ -25,7 +25,7 @@ class JSONEncoder(json.JSONEncoder):
         else:
             return super().default(o)
         
-    
+
 def prune_dict(o: dict) -> dict:
     if isinstance(o, dict):
         return {k: prune_dict(v) for k, v in o.items() if v is not None}
@@ -57,13 +57,12 @@ def get_real_path(path: str) -> str:
 
 
 def get_color_gradient(a: str, b: str, n: int) -> List[str]:
-    """
-    Generate a color gradient between two hex colors (e.g. ).
-    """
     a = get_hex_color_value(a)
     b = get_hex_color_value(b)
+
     start_rgb = tuple(int(a[i : i + 2], 16) for i in (1, 3, 5))
     end_rgb = tuple(int(b[i : i + 2], 16) for i in (1, 3, 5))
+    
     r_step = (end_rgb[0] - start_rgb[0]) / n
     g_step = (end_rgb[1] - start_rgb[1]) / n
     b_step = (end_rgb[2] - start_rgb[2]) / n
@@ -85,17 +84,6 @@ def is_hex_string(value: str) -> bool:
     return True
 
 
-HEX_COLOR_REGEX = re.compile(r'^#?([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$')
-
-
-def is_hex_color(value: str) -> bool:    
-    return bool(HEX_COLOR_REGEX.match(value))
-
-
-def is_web_color(value: str) -> bool:
-    return is_hex_color(value)
-
-
 def parse_hex_string(value: str) -> str:
     try:
         for prefix in ['#']:
@@ -106,6 +94,17 @@ def parse_hex_string(value: str) -> str:
     except AssertionError as e:
         raise ValueError(f"Invalid hex string: {value}") from e
     return value
+
+
+HEX_COLOR_REGEX = re.compile(r'^#?([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$')
+
+
+def is_hex_color(value: str) -> bool:    
+    return bool(HEX_COLOR_REGEX.match(value))
+
+
+def is_web_color(value: str) -> bool:
+    return is_hex_color(value)
 
 
 def get_hex_color_name(color: str) -> str:
