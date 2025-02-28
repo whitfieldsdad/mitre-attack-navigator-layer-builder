@@ -1,21 +1,28 @@
 import collections
+from dataclasses import dataclass
+import sys
+import dacite
+from stix2 import TAXIICollectionSource
+from stix2.base import _STIXBase
+from stix2.datastore import DataSource, DataStoreMixin, DataSourceError
+from stix2.datastore.filesystem import FileSystemSource
+from stix2.datastore.filters import Filter as STIX2Filter
+from stix2.datastore.memory import MemoryStore, MemorySource
+from taxii2client.v21 import Collection
+from typing import Any, Dict, Iterable, Iterator, Optional, Union, List
+import concurrent.futures
 import dataclasses
 import json
-import stix2.base
-from stix2 import Filter as _STIX2Filter
-from typing import Dict, Iterable, List, Optional, Union
-from dataclasses import dataclass
-import dacite
+import os
 import requests
-from stix2.datastore import DataSource
-from stix2.datastore.memory import MemorySource
-from mitre_attack_navigator_layer_builder import util
-from mitre_attack_navigator_layer_builder.constants import DEFAULT_COLOR, HEATMAP, JSON_INDENT, MITRE_ATTACK_ENTERPRISE, MITRE_ATTACK_ICS, MITRE_ATTACK_MOBILE, STIX2_DATA_SOURCE_URLS_BY_MITRE_ATTACK_NAVIGATOR_LAYER_DOMAIN, UNION
+import urllib.parse
+import uuid
+
+from mitre_attack_navigator_layer_builder.constants import DEFAULT_COLOR, MITRE_ATTACK_ENTERPRISE, MITRE_ATTACK_ICS, MITRE_ATTACK_MOBILE
 from mitre_attack_navigator_layer_builder.layers import Gradient, Layer, Technique
-
-import logging
-
-logger = logging.getLogger(__name__)
+from mitre_attack_navigator_layer_builder.util import JSONEncoder
+from mitre_attack_navigator_layer_builder import util
+from mitre_attack_navigator_layer_builder.layers import read_layer, write_layer
 
 
 @dataclass(frozen=True)
@@ -68,14 +75,13 @@ class GradientColorScheme(ColorScheme):
     min_color: str = 'green'
     max_color: str = 'red'
     
-    def get_colors(self, min_value: int, max_value: int) -> List[str]:
-        n = max_value - min_value + 1
-        return util.get_color_gradient(self.min_color, self.max_color, n)
+    def get_colors(self, max_value: int) -> List[str]:
+        return util.get_color_gradient(self.min_color, self.max_color, max_value)
     
-    def get_color_map(self, min_value: int, max_value: int) -> Dict[int, str]:
+    def get_color_map(self, max_value: int) -> Dict[int, str]:
         m = {}
-        colors = self.get_colors(min_value=min_value, max_value=max_value)
-        for i, color in enumerate(colors, start=min_value):
+        colors = self.get_colors(max_value=max_value)
+        for i, color in enumerate(colors, start=1):
             m[i] = color
         return m
 
@@ -85,29 +91,124 @@ class LayerConfig:
     """
     The configuration that will be used when generating layers.
     """
-    color_scheme: Optional[Union[SingleColorScheme, DiffColorScheme, GradientColorScheme]] = None
+    color_scheme: Optional[Union[str, SingleColorScheme, DiffColorScheme, GradientColorScheme]] = None
     disable_deselected_techniques: bool = False
     hide_disabled_techniques: bool = False
     hide_subtechniques: bool = True
+    reset_technique_scores: bool = False
+    drop_comments: bool = False
+
+
+def generate_enterprise_layer(
+    data_source: DataSource,
+    technique_ids: Optional[Iterable[str]] = None,
+    config: Optional[LayerConfig] = None) -> Layer:
+
+    return generate_layer(
+        data_source=data_source,
+        domain=MITRE_ATTACK_ENTERPRISE,
+        technique_ids=technique_ids,
+        config=config
+    )
+
+
+def generate_mobile_layer(
+    data_source: DataSource,
+    technique_ids: Optional[Iterable[str]] = None,
+    config: Optional[LayerConfig] = None) -> Layer:
+
+    return generate_layer(
+        data_source=data_source,
+        domain=MITRE_ATTACK_MOBILE,
+        technique_ids=technique_ids,
+        config=config
+    )
     
     
-def apply_layer_config(layer: Layer, layer_config: LayerConfig) -> Layer:    
-    if layer_config.disable_deselected_techniques:
+def generate_ics_layer(
+    data_source: DataSource,
+    technique_ids: Optional[Iterable[str]] = None,
+    config: Optional[LayerConfig] = None) -> Layer:
+
+    return generate_layer(
+        data_source=data_source,
+        domain=MITRE_ATTACK_ICS,
+        technique_ids=technique_ids,
+        config=config
+    )
+
+    
+# TODO
+def generate_layer(
+    data_source: DataSource,
+    domain: str,
+    technique_ids: Optional[Iterable[str]] = None,
+    config: Optional[LayerConfig] = None) -> Layer:
+    """
+    Generate a layer from the provided techniques and domain.
+    """
+    layer = Layer(
+        domain=domain
+    )
+    
+    if technique_ids:
+        for technique_id in technique_ids:
+            technique = Technique(
+                techniqueID=technique_id,
+                enabled=True,
+                color=DEFAULT_COLOR,
+            )
+            layer.techniques.append(technique)
+    
+    if config:
+        if config.disable_deselected_techniques:
+            selected_techniques = {technique.techniqueID for technique in layer.techniques}
+            
+            # TODO: here
+            all_techniques = {parse_external_id(o) for o in data_source.query([STIX2Filter('type', '=', 'attack-pattern')])}
+            deselected_techniques = all_techniques - selected_techniques
+            for technique_id in deselected_techniques:
+                technique = Technique(
+                    techniqueID=technique_id,
+                    enabled=False,
+                )
+                layer.techniques.append(technique)
+
+        layer = apply_layer_config(layer=layer, config=config)
+    return layer
+
+
+# TODO
+def apply_layer_config(layer: Layer, config: LayerConfig) -> Layer:
+    """
+    Apply the provided layer configuration to the provided layer.
+    """
+    if config.disable_deselected_techniques:
         layer = disable_deselected_techniques(layer)
     
-    if layer_config.hide_disabled_techniques:
+    if config.hide_disabled_techniques:
         layer = hide_disabled_techniques(layer)
     
-    if layer_config.hide_subtechniques:
-        layer = hide_subtechniques(layer)
+    if config.hide_subtechniques is not None:
+        layer = toggle_subtechnique_visibility(layer, visible=not config.hide_subtechniques)
     
-    if layer_config.color_scheme:
-        layer = apply_color_scheme(layer, layer_config.color_scheme)
+    if config.color_scheme:
+        layer = apply_color_scheme(layer, config.color_scheme)
+        
+    if config.reset_technique_scores:
+        layer = reset_technique_scores(layer)
+        
+    if config.drop_comments:
+        layer = drop_comments_from_layer(layer)
 
     return layer
 
 
+# TODO
 def drop_comments_from_layer(layer: Layer) -> Layer:
+    """
+    Drop any technique comments from the provided layer.
+    """
     for i, technique in enumerate(layer.techniques):
         if technique.comment:
             technique.comment = None
@@ -115,7 +216,11 @@ def drop_comments_from_layer(layer: Layer) -> Layer:
     return layer
 
 
+# TODO
 def disable_deselected_techniques(layer: Layer) -> Layer:
+    """
+    Disable any enabled techniques that either have no color or no score.
+    """
     for i, technique in enumerate(layer.techniques):
         if not technique.enabled:
             if (not technique.color) and (technique.score is None):
@@ -124,21 +229,82 @@ def disable_deselected_techniques(layer: Layer) -> Layer:
     return layer
 
 
+# TODO
+def reset_technique_scores(layer: Layer) -> Layer:
+    """
+    Reset the scores of the techniques in the provided layer.
+    """
+    for i, technique in enumerate(layer.techniques):
+        technique.score = None
+        layer.techniques[i] = technique
+    return layer
+
+
+# TODO
 def hide_disabled_techniques(layer: Layer) -> Layer:
+    """
+    Hide disabled techniques in the provided layer.
+    """
     layer.hideDisabled = True
     return layer
 
 
+def show_subtechniques(layer: Layer) -> Layer:
+    return toggle_subtechnique_visibility(layer, visible=True)
+
+
 def hide_subtechniques(layer: Layer) -> Layer:
+    return toggle_subtechnique_visibility(layer, visible=False)
+
+
+def toggle_subtechnique_visibility(layer: Layer, visible: bool) -> Layer:
     for i, technique in enumerate(layer.techniques):
-        if technique.showSubtechniques:
-            technique.showSubtechniques = False
-            layer.techniques[i] = technique
+        technique.showSubtechniques = visible
+        layer.techniques[i] = technique
     return layer
 
 
-def apply_color_scheme(layer: Layer, color_scheme: ColorScheme) -> Layer:
-    if isinstance(color_scheme, SingleColorScheme):
+# TODO
+def merge_layers_as_heatmap(layers: List[Layer]) -> Layer:
+    domains = {layer.domain for layer in layers}
+    assert len(domains) == 1, f'All layers must have the same domain - got {domains}'
+    
+    technique_scores = collections.defaultdict(int)
+    for layer in layers:
+        for technique in layer.techniques:
+            if technique.enabled:
+                technique_scores[technique.id] += 1
+    
+    max_score = max(technique_scores.values())
+    color_scheme = GradientColorScheme()
+    color_map = color_scheme.get_color_map(max_score)
+
+    layer = Layer(
+        domain=next(iter(domains)),
+        gradient=Gradient(
+            minValue=1,
+            maxValue=max_score,
+            colors=list(color_map.values()),
+        )
+    )
+    for technique, score in technique_scores.items():
+        technique = Technique(
+            techniqueID=technique, 
+            score=score, 
+            color=color_map[score],
+        )
+        layer.techniques.append(technique)
+    
+    return layer
+
+
+def apply_color_scheme(layer: Layer, color_scheme: Union[str, ColorScheme]) -> Layer:
+    """
+    Apply the provided color scheme to the provided layer.
+    """
+    if isinstance(color_scheme, str):
+        return apply_single_color_scheme(layer, SingleColorScheme(color_scheme))
+    elif isinstance(color_scheme, SingleColorScheme):
         return apply_single_color_scheme(layer, color_scheme)
     elif isinstance(color_scheme, DiffColorScheme):
         return apply_diff_color_scheme(layer, color_scheme)
@@ -148,7 +314,11 @@ def apply_color_scheme(layer: Layer, color_scheme: ColorScheme) -> Layer:
         raise ValueError(f'Invalid color scheme: {color_scheme}')
 
 
+# TODO
 def apply_single_color_scheme(layer: Layer, color_scheme: SingleColorScheme) -> Layer:
+    """
+    Apply the provided single color scheme to the provided layer.
+    """
     techniques = layer.techniques
     for i, technique in enumerate(techniques):
         if technique.enabled:
@@ -157,7 +327,11 @@ def apply_single_color_scheme(layer: Layer, color_scheme: SingleColorScheme) -> 
     return layer
 
 
+# TODO
 def apply_diff_color_scheme(layer: Layer, color_scheme: DiffColorScheme) -> Layer:
+    """
+    Apply the provided diff color scheme to the provided layer.
+    """
     techniques = layer.techniques
     allowed = {-1, 0, 1}
     seen = {technique.score for technique in techniques}
@@ -176,12 +350,16 @@ def apply_diff_color_scheme(layer: Layer, color_scheme: DiffColorScheme) -> Laye
     return layer
 
 
+# TODO
 def apply_gradient_color_scheme(layer: Layer, color_scheme: GradientColorScheme) -> Layer:
+    """
+    Apply the provided gradient color scheme to the provided layer.
+    """
     techniques = layer.techniques
     scores = {technique.score for technique in techniques}
     min_score = min(scores)
     max_score = max(scores)
-    color_map = color_scheme.get_color_map(min_score, max_score)
+    color_map = color_scheme.get_color_map(max_score)
     
     for i, technique in enumerate(techniques):
         if technique.score in color_map:
@@ -191,266 +369,274 @@ def apply_gradient_color_scheme(layer: Layer, color_scheme: GradientColorScheme)
 
 
 @dataclass()
-class STIX2DataSourceConfig:
-    verify_tls_certificates: bool = True
+class Neo4jDataSourceConfig:
+    url: str
 
 
 @dataclass()
-class STIX2ObjectFilter:
-    include_revoked: bool = False
-    include_deprecated: bool = False
+class Neo4jDataStore(DataStoreMixin):
+    """
+    A STIX 2 data store that allows you to persist STIX 2 objects to a Neo4j database.
+    """
+    config: Neo4jDataSourceConfig = dataclasses.field(default_factory=Neo4jDataSourceConfig)
+    
+    def get(self, stix_id: str) -> Optional[dict]:
+        raise NotImplementedError()
+    
+    def add(self, rows: Iterable[dict]) -> None:
+        raise NotImplementedError()
 
-    def matches(self, o: dict) -> bool:
-        """
-        Returns a boolean indicating whether or not the provided STIX 2 object matches the filter.
-        """
-        if not self.include_revoked and is_stix2_object_revoked(o):
-            return False
-        
-        if not self.include_deprecated and is_stix2_object_deprecated(o):
-            return False
+    def all_versions(self, stix_id: str) -> Iterator[dict]:
+        raise NotImplementedError()
+    
+    def query(self, query: List[STIX2Filter] = None) -> Iterator[dict]:
+        raise NotImplementedError()
+    
 
+@dataclass(frozen=True)
+class Decoder:
+    """
+    A decoder that can be used to determine if a STIX 2 object is revoked or deprecated.
+    """
+    def is_revoked(self, o: dict) -> bool:
+        """
+        Determine if the provided STIX 2 object is revoked.
+        """
+        raise NotImplementedError()
+    
+    def is_deprecated(self, o: dict) -> bool:
+        """
+        Determine if the provided STIX 2 object is deprecated.
+        """
+        raise NotImplementedError()
+
+
+@dataclass(frozen=True)
+class MitreDecoder:
+    def is_revoked(self, o: dict) -> bool:
+        return o.get('revoked', False)
+    
+    def is_deprecated(self, o: dict) -> bool:
+        return o.get('x-mitre-deprecated', False)
+
+
+def parse_external_id(o: dict) -> Optional[str]:
+    """
+    Parse the external ID of the provided STIX 2 object.
+    """
+    if is_mitre_attack_object(o):
+        return next((ref['external_id'] for ref in o['external_references'] if ref['source_name'] == 'mitre-attack'), None)
+    elif is_mitre_capec_object(o):
+        return next((ref['external_id'] for ref in o['external_references'] if ref['source_name'] == 'capec'), None)
+    elif is_mitre_mbc_object(o):
+        if 'obj_defn' in o:
+            return o['obj_defn']['external_id']
+    elif is_nist_sp_800_53_object(o):
+        for ref in o['external_references']:
+            if ref['source_name'] in ['NIST 800-53 Revision 4', 'NIST 800-53 Revision 5']:
+                return ref['external_id']
+
+
+def is_mitre_attack_object(o: dict) -> bool:
+    """
+    Determine if the provided STIX 2 object is from the Mitre Adversarial Tactics, Techniques, and Common Knowledge (ATT&CK) dataset.
+    """
+    if o:
+        marking = 'marking-definition--fa42a846-8d90-4e51-bc29-71d5b4802168'
+        return o['id'] == marking or marking in o['object_marking_refs']
+    return False
+
+
+def is_mitre_capec_object(o: dict) -> bool:
+    """
+    Determine if the provided STIX 2 object is from the Mitre Common Attack Pattern Enumeration and Classification (CAPEC) dataset.
+    """
+    if o:
+        marking = 'marking-definition--17d82bb2-eeeb-4898-bda5-3ddbcd2b799d'
+        return o['id'] == marking or marking in o['object_marking_refs']
+    return False
+
+
+def is_mitre_mbc_object(o: dict) -> bool:
+    """
+    Determine if the provided STIX 2 object is from the Mitre Malware Behavior Catalog (MBC).
+    """
+    if not o:
+        return False
+    
+    identity = 'identity--b73c59c1-8560-449a-b8d0-c2ce0533c5bf'
+    marking = 'marking-definition--f88d90b2-8e23-4f1d-9b4c-4ab3c4a3e2b7'
+    if o['id'] == marking or marking in o.get('object_marking_refs', []):
         return True
-
-
-def is_stix2_object_revoked(o: dict) -> bool:
-    """
-    Returns a boolean indicating whether or not the provided STIX 2 object has been revoked.
-    """
-    return o.get('revoked', False)
-
-
-def is_stix2_object_deprecated(o: dict) -> bool:
-    """
-    Returns a boolean indicating whether or not the provided STIX 2 object has been deprecated.
-    """
-    return o.get('x_mitre_deprecated', False)
-
-
-def parse_stix2_filter(query: str, delimeter: str = ' ') -> _STIX2Filter:
-    """
-    Parses the provided STIX 2 filter (e.g. 'type = attack-pattern') and returns a stix2.Filter object.
-    """
-    s, p, o = query.split(delimeter, maxsplit=2)
-    return _STIX2Filter(s, p, o)
-
-
-def get_mitre_attack_enterprise_data_source() -> DataSource:
-    url = STIX2_DATA_SOURCE_URLS_BY_MITRE_ATTACK_NAVIGATOR_LAYER_DOMAIN[MITRE_ATTACK_ENTERPRISE]
-    return get_stix2_data_source(url)
-
-
-def get_mitre_attack_mobile_data_source() -> DataSource:
-    url = STIX2_DATA_SOURCE_URLS_BY_MITRE_ATTACK_NAVIGATOR_LAYER_DOMAIN[MITRE_ATTACK_MOBILE]
-    return get_stix2_data_source(url)
-
-
-def get_mitre_attack_ics_data_source() -> DataSource:
-    url = STIX2_DATA_SOURCE_URLS_BY_MITRE_ATTACK_NAVIGATOR_LAYER_DOMAIN[MITRE_ATTACK_ICS]
-    return get_stix2_data_source(url)
-
-
-# TODO: add support for S3
-# TODO: add support for TAXII
-# TODO: add support for filesystem sources
-# TODO: add support for composite data sources
-def get_stix2_data_source(path: str, config: Optional[STIX2DataSourceConfig] = None) -> DataSource:
-    config = config or STIX2DataSourceConfig()
-    if path.startswith(('http://', 'https://')):
-        response = requests.get(path, verify=config.verify_tls_certificates)
-        response.raise_for_status()
-
-        data = response.json()
-        src = MemorySource(data)
+    elif o['id'] == identity or o.get('created_by_ref') == identity:
+        return True
     else:
-        data = util.read_json_file(path)
-        src = MemorySource(data)
+        return False
+    
+
+def is_nist_sp_800_53_object(o: dict) -> bool:
+    """
+    Determine if the provided STIX 2 object represents a control or subcontrol from NIST Special Publication 800-53 Revision 4 or 5.
+    """
+    for ref in o.get('external_references', []):
+        if ref['source_name'] in ['NIST 800-53 Revision 4', 'NIST 800-53 Revision 5']:
+            return True
+    return False
+
+
+def iter_stix2_objects(
+    data_sources: Union[str, DataSource, Iterable[Union[str, DataSource]]], 
+    queries: Optional[Iterable[str]] = None, 
+    include_deprecated_objects: bool = False, 
+    include_revoked_objects: bool = False) -> Iterator[dict]:
+    """
+    Given the provided STIX 2 data sources, queries, and filters, return an iterator of STIX 2 objects.
+    """
+    if isinstance(data_sources, (str, DataSource)):
+        data_sources = [data_sources]
+            
+    if queries:
+        queries = [parse_stix2_filter(q) if isinstance(q, str) else STIX2Filter for q in queries]
+    
+    decoder = MitreDecoder()
+    for src in data_sources:
+        src = get_stix2_data_source(src) if isinstance(src, str) else src
+        rows = src.query(queries)
+        rows = map(parse_stix2_object, rows)
+
+        if include_deprecated_objects is False:
+            rows = filter(lambda o: decoder.is_deprecated(o) is False, rows)
         
-    return src
+        if include_revoked_objects is False:
+            rows = filter(lambda o: decoder.is_revoked(o) is False, rows)
+
+        yield from rows
 
 
-def iter_stix2_objects(src: DataSource, f: Optional[STIX2ObjectFilter] = None) -> Iterable[dict]:
-    rows = src.query()
-    if f:
-        rows = filter(f.matches, rows)
-    rows = map(convert_stix2_object_to_dict, rows)
-    yield from rows
-
-
-def convert_stix2_object_to_dict(o: Union[stix2.base._STIXBase, dict]) -> dict:
-    if isinstance(o, stix2.base._STIXBase):
+def parse_stix2_object(o: Union[_STIXBase, dict]) -> dict:
+    """
+    Convert the provided STIX 2 object from a STIX object to a dictionary.
+    """
+    if isinstance(o, _STIXBase):
         o = json.loads(o.serialize(pretty=True))
     assert isinstance(o, dict)
     return o
 
 
-# TODO: restrict auto-selected techniques to techniques from the MITRE ATT&CK framework (e.g., using x-mitre-matrix, x-mitre-tactic, attack-pattern objects).
-def generate_layer(
-    domain: str,
-    data_source: Optional[DataSource] = None, 
-    layer_config: Optional[LayerConfig] = None, 
-    selected_techniques: Optional[Iterable[str]] = None, 
-    objects_by_id: Optional[Dict[str, dict]] = None) -> Layer:
+def parse_stix2_filter(s: str) -> STIX2Filter:
     """
-    Generate a layer for the provided ATT&CK domain.
-    
-    - `domain`: the ATT&CK domain to generate the layer for (e.g., 'enterprise-attack', 'mobile-attack', 'ics-attack')
-    - `data_source`: the STIX 2 data source to use when querying for ATT&CK objects (optional, a default data source will be used if not provided)
-    - `layer_config`: the configuration to apply when generating the layer (optional, default configuration will be used if not provided)
-    - `selected_techniques`: the techniques to include in the layer (optional, all techniques will be included if not provided)
-    - `objects_by_id`: a dictionary of STIX 2 objects indexed by their ID (optional, used for caching).
+    Parse the provided STIX 2 filter (e.g. "type = 'attack-pattern'") into a STIX 2 filter object.
     """
-    layer_config = layer_config or LayerConfig()
-    selected_techniques = selected_techniques or []
+    s, p, o = s.split(' ', maxsplit=2)
+    return STIX2Filter(s, p, o)
+
+
+def get_stix2_data_sources(data_sources: Iterable[Union[str, DataSource]]) -> List[DataSource]:
+    """
+    Given the provided iterable of STIX 2 data sources, file paths, and URLs, return a list of STIX 2 data sources.
+    """
+    return list(map(get_stix2_data_source, data_sources))
+
+
+def get_stix2_data_source(path: str, memory: bool = True) -> Union[DataSource, MemoryStore]:
+    """
+    Given the provided file path or URL, return a STIX 2 data source.
+    """
+    if path.startswith(('http://', 'https://')):
+        return get_stix2_data_source_from_url(path)
     
-    if not data_source:
-        url = STIX2_DATA_SOURCE_URLS_BY_MITRE_ATTACK_NAVIGATOR_LAYER_DOMAIN[url]
-        data_source = get_stix2_data_source(url)
-    
-    if not objects_by_id:
-        objects_by_id = {o['id']: o for o in data_source.query([_STIX2Filter('type', '=', 'attack-pattern')])}
-
-    attack_patterns = [o for o in objects_by_id.values() if o['type'] == 'attack-pattern']
-    
-    layer = Layer(
-        domain=domain,
-        hideDisabled=layer_config.hide_disabled_techniques,
-    )
-    
-    all_technique_ids = {extract_external_id(technique) for technique in attack_patterns}
-    selected_techniques = set(map(str.upper, selected_techniques))
-
-    for technique in selected_techniques:
-        technique = Technique(
-            techniqueID=technique,
-            color=layer_config.color_scheme.color,
-            showSubtechniques=not layer_config.hide_subtechniques,
-        )
-        layer.techniques.append(technique)
-    
-    if layer_config.disable_deselected_techniques:
-        for technique in all_technique_ids - selected_techniques:
-            technique = Technique(
-                techniqueID=technique,
-                enabled=False,
-            )
-            layer.techniques.append(technique)
-
-    return layer
-
-
-def generate_enterprise_layer(selected_techniques: Optional[List[str]] = None, layer_config: Optional[LayerConfig] = None) -> Layer:
-    return generate_layer(domain=MITRE_ATTACK_ENTERPRISE, selected_techniques=selected_techniques, layer_config=layer_config)
-
-
-def generate_mobile_layer(selected_techniques: Optional[List[str]] = None, config: Optional[LayerConfig] = None) -> Layer:
-    return generate_layer(domain=MITRE_ATTACK_MOBILE, selected_techniques=selected_techniques, layer_config=config)
-
-
-def generate_ics_layer(selected_techniques: Optional[List[str]] = None, config: Optional[LayerConfig] = None) -> Layer:
-    return generate_layer(domain=MITRE_ATTACK_ICS, selected_techniques=selected_techniques, layer_config=config)
-
-
-def read_layer(path: str) -> Layer:
-    data = util.read_json_file(path)
-    return parse_layer_from_dict(data)
-
-
-def write_layer(layer: Layer, path: str):
-    data = serialize_layer_to_dict(layer)
-    with open(path, 'w') as f:
-        json.dump(data, f, cls=util.JSONEncoder, indent=JSON_INDENT)
-
-
-def parse_layer_from_dict(o: dict) -> Layer:
-    return dacite.from_dict(Layer, o)
-
-
-# TODO: apply layer config
-def parse_layers_from_technique_list(techniques: Iterable[dict], layer_config: Optional[LayerConfig] = None) -> Layer:
-    layer = Layer()
-    for technique in techniques:
-        technique = Technique(
-            techniqueID=technique['technique_id'],
-            tactic=technique.get('tactic'),
-            color=technique.get('color'),
-            score=technique.get('score'),
-            comment=technique.get('comment'),
-            enabled=technique.get('enabled', True),
-        )
-        layer.techniques.append(technique)
-    
-    if layer_config:
-        layer = apply_layer_config(layer, layer_config)
-    return layer
-
-
-def serialize_layer_to_dict(layer: Layer) -> dict:
-    data = dataclasses.asdict(layer)
-    data = util.prune_dict(data)
-    return data
-
-
-def serialize_layer_to_json(layer: Layer, indent: int = JSON_INDENT) -> str:
-    data = serialize_layer_to_dict(layer)
-    return json.dumps(data, cls=util.JSONEncoder, indent=indent)
-
-
-# TODO: merge layers as a heatmap
-def merge_layers(layers: Iterable[Layer], merge_strategy: str = UNION) -> Layer:
-    layers = list(layers)
-    domains = {layer.domain for layer in layers}
-    assert len(domains) == 1, f'Cannot merge layers from different domains: {domains}'
-    
-    if merge_strategy == HEATMAP:
-        layer = merge_layers_as_heatmap(layers)        
+    path = util.get_real_path(path)
+    if not os.path.exists(path):
+        raise FileNotFoundError(path)
+    elif os.path.isdir(path):
+        return get_stix2_data_source_from_directory(path, memory=memory)
+    elif os.path.isfile(path):
+        return get_stix2_data_source_from_file(path)
     else:
-        raise ValueError(f'Invalid merge strategy: {merge_strategy}')
+        raise ValueError(f"Unsupported path: {path}")
+
     
-    return layer
+def get_stix2_data_source_from_url(url: str, verify_tls_certificate_chain: bool = False) -> DataSource:
+    """
+    Given the provided URL, return a STIX 2 data source.
+    """
+    scheme, _, _, _, _, _ = urllib.parse.urlparse(url)
+    if scheme in ('http', 'https'):
+        try:
+            return TAXIICollectionSource(Collection(url))
+        except DataSourceError as e:
+            response = requests.get(url, verify=verify_tls_certificate_chain)
+            response.raise_for_status()
+            data = response.json()
+            return MemorySource(data)
+    else:
+        raise ValueError(f"Unsupported URL scheme: {url}")
 
 
-# TODO: make color scheme configurable
-def merge_layers_as_heatmap(layers: List[Layer]) -> Layer:
-    scores = collections.defaultdict(int)
-    
-    for layer in layers:
-        seen = set()
-        for technique in layer.techniques:
-            technique_id = technique.techniqueID
-            if technique_id not in seen:
-                scores[technique_id] += 1
-                seen.add(technique_id)
-    
-    min_score = 1
-    max_score = max(scores.values())
-    gradient = GradientColorScheme(
-        min_color='cornflowerblue',
-        max_color='darkblue',
-    )
-    color_map = gradient.get_color_map(min_value=min_score, max_value=max_score)
-    
-    techniques = []
-    for technique_id, score in scores.items():
-        color = color_map[score] if score >= min_score else None
-        technique = Technique(
-            techniqueID=technique_id,
-            score=score,
-            color=color,
-        )
-        techniques.append(technique)
-
-    return Layer(
-        gradient=Gradient(
-            minValue=min_score,
-            maxValue=max_score,
-            colors=list(color_map.values()),
-        ),
-        techniques=techniques,
-    )
+def get_stix2_data_source_from_file(path: str) -> DataSource:
+    """
+    Given the provided file path, return a STIX 2 data source
+    """
+    store = MemoryStore()
+    if path.endswith(('.json', '.json.gz')):
+        bundle = util.read_json_file(path)
+        for row in bundle['objects']:
+            store.add(row)
+    else:
+        raise ValueError(f"Unsupported file format: {path}")
+    return store
 
 
-def extract_external_id(o: dict) -> Optional[str]:
-    for ref in o.get('external_references', []):
-        if ref.get('source_name') == 'mitre-attack':
-            return ref.get('external_id')
+def get_stix2_data_source_from_directory(path: str, memory: bool = False) -> DataSource:
+    """
+    Given the provided directory path, return a STIX 2 data source.
+    """
+    if memory:
+        def f(path: str) -> Iterator[dict]:
+            yield from util.read_json_file(path)['objects']
+        
+        paths = set()
+        for root, _, files in os.walk(path):
+            for file in files:
+                path = os.path.join(root, file)
+                paths.add(path)
+        
+        memory_store = MemoryStore()
+        with concurrent.futures.ThreadPoolExecutor() as executor:            
+            for bundle in executor.map(f, paths):
+                for row in bundle:
+                    memory_store.add(row)
+
+        return memory_store
+    else:
+        return FileSystemSource(path)
+
+
+def read_stix2_bundle(path: str) -> Iterable[dict]:
+    """
+    Read the STIX 2 bundle from the specified file path.
+    """
+    src = get_stix2_data_source(path)
+    yield from src.query()
+
+
+def write_stix2_bundle(rows: Iterable[dict], path: str, indent: int = 4, spec_version: str = '2.1') -> None:
+    """
+    Write the provided STIX 2 bundle to the specified file path.
+    """
+    path = util.get_real_path(path)
+    with open(path, mode='w') as fp:
+        bundle = new_stix2_bundle(rows, spec_version=spec_version)
+        json.dump(bundle, fp, cls=JSONEncoder, indent=indent)
+
+
+def new_stix2_bundle(rows: Iterable[dict], spec_version: str = '2.1') -> dict:
+    """
+    Create a new STIX 2 bundle.
+    """
+    return {
+        'id': f'bundle--{uuid.uuid4()}',
+        'type': 'bundle',
+        'spec_version': spec_version,
+        'objects': list(rows),
+    }

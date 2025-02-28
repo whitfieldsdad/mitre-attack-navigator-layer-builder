@@ -6,3 +6,4 @@ cache/
 test.*
 .vscode/
 private/
+.DS_Store

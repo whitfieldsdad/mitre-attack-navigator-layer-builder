@@ -10,6 +10,86 @@ MITRE_ATTACK_ENTERPRISE_URL = 'https://raw.githubusercontent.com/mitre-attack/at
 MITRE_ATTACK_MOBILE_URL = 'https://raw.githubusercontent.com/mitre-attack/attack-stix-data/refs/heads/master/mobile-attack/mobile-attack.json'
 MITRE_ATTACK_ICS_URL = 'https://raw.githubusercontent.com/mitre-attack/attack-stix-data/refs/heads/master/ics-attack/ics-attack.json'
 
+MITRE_ATTACK_TACTICS = [
+  {
+    "name": "Credential Access",
+    "x_mitre_shortname": "credential-access",
+    "external_id": "TA0006"
+  },
+  {
+    "name": "Execution",
+    "x_mitre_shortname": "execution",
+    "external_id": "TA0002"
+  },
+  {
+    "name": "Impact",
+    "x_mitre_shortname": "impact",
+    "external_id": "TA0040"
+  },
+  {
+    "name": "Persistence",
+    "x_mitre_shortname": "persistence",
+    "external_id": "TA0003"
+  },
+  {
+    "name": "Privilege Escalation",
+    "x_mitre_shortname": "privilege-escalation",
+    "external_id": "TA0004"
+  },
+  {
+    "name": "Lateral Movement",
+    "x_mitre_shortname": "lateral-movement",
+    "external_id": "TA0008"
+  },
+  {
+    "name": "Defense Evasion",
+    "x_mitre_shortname": "defense-evasion",
+    "external_id": "TA0005"
+  },
+  {
+    "name": "Exfiltration",
+    "x_mitre_shortname": "exfiltration",
+    "external_id": "TA0010"
+  },
+  {
+    "name": "Discovery",
+    "x_mitre_shortname": "discovery",
+    "external_id": "TA0007"
+  },
+{
+    "name": "Collection",
+    "x_mitre_shortname": "collection",
+    "external_id": "TA0009"
+  },
+  {
+    "name": "Resource Development",
+    "x_mitre_shortname": "resource-development",
+    "external_id": "TA0042"
+  },
+  {
+    "name": "Reconnaissance",
+    "x_mitre_shortname": "reconnaissance",
+    "external_id": "TA0043"
+  },
+  {
+    "name": "Command and Control",
+    "x_mitre_shortname": "command-and-control",
+    "external_id": "TA0011"
+  },
+  {
+    "name": "Initial Access",
+    "x_mitre_shortname": "initial-access",
+    "external_id": "TA0001"
+  }
+]
+
+MITRE_ATTACK_TACTIC_SHORTNAMES_TO_NAMES = {
+    t['x_mitre_shortname']: t['name'] for t in MITRE_ATTACK_TACTICS
+}
+MITRE_ATTACK_TACTIC_SHORTNAMES_TO_EXTERNAL_IDS = {
+    t['x_mitre_shortname']: t['external_id'] for t in MITRE_ATTACK_TACTICS
+}
+
 STIX2_DATA_SOURCE_URLS_BY_MITRE_ATTACK_NAVIGATOR_LAYER_DOMAIN = {
     MITRE_ATTACK_ENTERPRISE: MITRE_ATTACK_ENTERPRISE_URL,
     MITRE_ATTACK_MOBILE: MITRE_ATTACK_MOBILE_URL,
