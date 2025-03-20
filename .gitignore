@@ -3,7 +3,6 @@ __pycache__/
 .venv
 venv
 cache/
-test.py
 test.xlsx
 .vscode/
 private/
