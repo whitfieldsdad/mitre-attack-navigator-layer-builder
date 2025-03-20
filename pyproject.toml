@@ -7,7 +7,7 @@ readme = "README.md"
 packages = [{include = "mitre_attack_navigator_layer_builder"}]
 
 [tool.poetry.scripts]
-tool = "mitre_attack_navigator_layer_builder.cli:main"
+tool = "mitre_attack_navigator_layer_builder.cli:main_group"
 
 [tool.poetry.dependencies]
 python = "^3.10"

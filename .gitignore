@@ -3,7 +3,8 @@ __pycache__/
 .venv
 venv
 cache/
-test.*
+test.py
+test.xlsx
 .vscode/
 private/
 .DS_Store

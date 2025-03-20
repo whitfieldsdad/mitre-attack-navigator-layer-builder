@@ -1,0 +1,22 @@
+digraph G {
+    rankdir=LR;
+    node [shape=box];
+    edge [dir=none];
+
+    mitre_attack [label="Mitre ATT&CK"];
+    mitre_capec [label="Mitre CAPEC"];
+    mitre_cve [label="Mitre CVE"];
+    mitre_cwe [label="Mitre CWE"];
+    mitre_d3fend [label="Mitre D3FEND"];
+    nist_csf [label="NIST Cybersecurity Framework (CSF)"];
+    nist_pf [label="NIST Privacy Framework (PF)"];
+    nist_sp_800_53 [label="NIST SP 800-53"];
+
+    mitre_cve -> mitre_cwe;
+    mitre_cwe -> mitre_capec;
+    mitre_capec -> mitre_attack;
+    mitre_attack -> nist_sp_800_53;
+    mitre_d3fend -> mitre_attack;
+    nist_sp_800_53 -> nist_csf;
+    nist_sp_800_53 -> nist_pf;
+}
